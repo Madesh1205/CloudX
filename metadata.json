@@ -1,0 +1,6 @@
+{
+  "name": "CloudX – Cloud Resource & Deadlock Management Platform",
+  "description": "Enterprise cloud computing infrastructure simulation, resource allocation engine, and interactive Operating Systems deadlock management platform featuring Banker's Algorithm, RAG visualization, prevention, detection, and recovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
