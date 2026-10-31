@@ -85,7 +85,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
     onCloseMobile();
   };
 
-  // Group nav items by section
   const sections = Array.from(new Set(navItems.map((item) => item.section)));
 
   return (
@@ -100,16 +99,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Main Sidebar Shell */}
       <aside
-        className={`fixed lg:static top-0 bottom-0 left-0 z-40 w-64 bg-slate-900 border-r border-slate-800 flex flex-col transition-transform duration-200 ease-in-out shrink-0 ${
+        className={`fixed lg:static top-0 bottom-0 left-0 z-40 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col transition-transform duration-200 ease-in-out shrink-0 ${
           isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
         {/* Mobile Header Close Button */}
-        <div className="flex items-center justify-between p-4 border-b border-slate-800 lg:hidden">
-          <span className="text-sm font-semibold text-white">CloudX Navigation</span>
+        <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-800 lg:hidden">
+          <span className="text-sm font-semibold text-slate-900 dark:text-white">CloudX Navigation</span>
           <button
             onClick={onCloseMobile}
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg bg-slate-800"
+            className="p-1.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg bg-slate-100 dark:bg-slate-800"
           >
             <X className="w-4 h-4" />
           </button>
@@ -119,7 +118,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="flex-1 overflow-y-auto px-3 py-4 space-y-6">
           {sections.map((sectionName) => (
             <div key={sectionName} className="space-y-1">
-              <h3 className="px-3 text-[11px] font-mono font-semibold tracking-wider text-slate-500 uppercase">
+              <h3 className="px-3 text-[11px] font-mono font-semibold tracking-wider text-slate-400 dark:text-slate-500 uppercase">
                 {sectionName}
               </h3>
               <div className="mt-1 space-y-0.5">
@@ -134,14 +133,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         onClick={() => handleNavClick(item.id)}
                         className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium transition-all group ${
                           isActive
-                            ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-semibold shadow-sm'
-                            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                            ? 'bg-blue-50 text-blue-700 border border-blue-200 font-semibold shadow-2xs dark:bg-blue-500/15 dark:text-blue-300 dark:border-blue-500/30'
+                            : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60'
                         }`}
                       >
                         <div className="flex items-center gap-2.5 truncate">
                           <Icon
                             className={`w-4 h-4 shrink-0 transition-colors ${
-                              isActive ? 'text-cyan-400' : 'text-slate-500 group-hover:text-slate-300'
+                              isActive ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400 dark:text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-300'
                             }`}
                           />
                           <span className="truncate">{item.label}</span>
@@ -161,9 +160,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* Footer Engine Info */}
-        <div className="p-3 border-t border-slate-800 bg-slate-950/40 text-[11px] text-slate-500 flex items-center justify-between">
+        <div className="p-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 text-[11px] text-slate-500 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
             <span>Bankers &amp; RAG Engine</span>
           </div>
           <span className="font-mono text-[10px]">v2.4</span>

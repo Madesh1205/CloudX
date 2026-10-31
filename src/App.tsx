@@ -71,7 +71,7 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors duration-200">
       <Header
         onToggleMobileMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         activeViewTitle={VIEW_TITLES[activeView]}
@@ -85,7 +85,7 @@ function AppContent() {
           onCloseMobile={() => setIsMobileMenuOpen(false)}
         />
 
-        <main className="flex-1 overflow-y-auto p-4 lg:p-6 bg-slate-950/60">
+        <main className="flex-1 overflow-y-auto p-4 lg:p-6 bg-slate-100/70 dark:bg-slate-950/60">
           <div className="max-w-7xl mx-auto">
             {renderActiveView()}
           </div>
